@@ -257,7 +257,7 @@ if __name__ == '__main__':
 
     #obj_names = ["00000016"]
 
-    fin = open("abc_obj_list.txt", 'r')
+    fin = open("abc_obj_list_test.txt", 'r')
     obj_names = [name.strip() for name in fin.readlines()]
     fin.close()
 
