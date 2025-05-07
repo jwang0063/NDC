@@ -28,7 +28,9 @@ import cutils
 # 1 cube corner V (int)
 # 1 cube internal P (float)
 
-
+'''
+更改get_gt_LOD.py 260行 abc_boj_list.txt路徑 /content/NDC/abc_obj_list_test.txt
+'''
 
 def get_gt_from_intersectionpn(q, name_list):
     name_num = len(name_list)

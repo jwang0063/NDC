@@ -2,9 +2,15 @@ import argparse
 import os
 import numpy as np
 import time
-
 import torch
 
+'''
+main.py 141~142修改dataloader的num_workeds = 2
+修改dataset.py 48行 hdf5_file = h5py.File(self.data_dir+"/00000001.hdf5", 'r')
+修改dataset.py 30行 fin = open("/content/NDC/abc_obj_list_test.txt", 'r')
+刪掉35行
+36行else下加入 self.hdf5_names = [] 把test作為0筆
+'''
 
 parser = argparse.ArgumentParser()
 
