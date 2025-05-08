@@ -47,8 +47,8 @@ class ABC_grid_hdf5(torch.utils.data.Dataset):
             if (not self.is_undc) and self.out_float:
                 for name in self.hdf5_names:
                     # hdf5_file = h5py.File(self.data_dir+"/"+name+".hdf5", 'r')
-                    hdf5_file = h5py.File(self.data_dir+"/00000001.hdf5", 'r')
-                    
+                    hdf5_file = h5py.File(self.data_dir+"/00000005.hdf5", 'r')
+
                     for grid_size in [32,64]:
                         float_grid = hdf5_file[str(grid_size)+"_float"][:]
                         if np.any(float_grid>=0):
