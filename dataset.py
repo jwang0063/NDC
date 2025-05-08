@@ -32,9 +32,11 @@ class ABC_grid_hdf5(torch.utils.data.Dataset):
         fin.close()
 
         if self.train:
+            # self.hdf5_names = self.hdf5_names[:int(len(self.hdf5_names)*0.8)]
             print("Total#", "train", len(self.hdf5_names), self.input_type, self.out_bool, self.out_float)
         else:
             self.hdf5_names = []
+            # self.hdf5_names = self.hdf5_names[int(len(self.hdf5_names)*0.8):]
             print("Total#", "test", len(self.hdf5_names), self.input_type, self.out_bool, self.out_float)
 
         #separate 32 and 64
@@ -44,7 +46,9 @@ class ABC_grid_hdf5(torch.utils.data.Dataset):
         if self.train:
             if (not self.is_undc) and self.out_float:
                 for name in self.hdf5_names:
+                    # hdf5_file = h5py.File(self.data_dir+"/"+name+".hdf5", 'r')
                     hdf5_file = h5py.File(self.data_dir+"/00000001.hdf5", 'r')
+                    
                     for grid_size in [32,64]:
                         float_grid = hdf5_file[str(grid_size)+"_float"][:]
                         if np.any(float_grid>=0):

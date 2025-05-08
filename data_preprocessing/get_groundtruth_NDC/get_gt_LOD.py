@@ -235,7 +235,7 @@ def get_gt_from_intersectionpn(q, name_list):
         #delete sdf, intersection, and binvox to save space
         os.remove(in_sdf_name)
         os.remove(in_intersection_name)
-        os.remove(in_binvox_name)
+        # os.remove(in_binvox_name)
 
 
         q.put([1,pid,idx])
